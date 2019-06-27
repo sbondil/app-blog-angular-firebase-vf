@@ -10,7 +10,10 @@
   <!-- <input type="text" class="form-control" [(ngModel)]="content"> -->
 
   <button class="btn btn-sm btn-success"
-          (click)="onLike()">J'aime {{loveIts}}</button>
+          (click)="onLike()">J'aime {{ipost.loveIts}}</button>
   <button class="btn btn-sm btn-danger"
-          (click)="ondLike()">J'aime pas {{dloveIts}}</button>
+          (click)="ondLike()">J'aime pas {{ipost.dloveIts}} </button>
+  <button class="btn btn-sm btn-danger"
+          (click)="onSupress()">Supprimer Post</button>
+
 

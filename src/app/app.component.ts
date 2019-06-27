@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {Post} from './models/post.model';
-
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +7,22 @@ import {Post} from './models/post.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  PostsArray: Post[] = [
-    {
-      title: 'Mon premier post',
-      content: 'Les cons, ça ose tout. C\' est même à ça qu on les reconnaît',
-      loveIts: 0,
-      dloveIts: 0,
-      created_at: new Date()
-    },
-    {
-      title: 'Mon second post',
-      content: 'J ai connu une polonaise qui en prenait au p\' tit déjeuner',
-      loveIts: 0,
-      dloveIts: 0,
-      created_at: new Date()
-    },
-    {
-      title: 'Mon troisième post',
-      content: 'Seulement on a dû arrêter la fabrication. Y a des clients qui devenaient aveugles, alors ça faisait des histoires',
-      loveIts: 0,
-      dloveIts: 0,
-      created_at: new Date()
-    }
-  ];
+
   title = 'app-blog-angular';
 
+constructor() {
+  const firebaseConfig = {
+    apiKey: 'AIzaSyBD4nU47MFLI9cGzDGhdZAmlgedLwsoudI',
+    authDomain: 'angularappblog.firebaseapp.com',
+    databaseURL: 'https://angularappblog.firebaseio.com',
+    projectId: 'angularappblog',
+    storageBucket: '',
+    messagingSenderId: '780229981827',
+    appId: '1:780229981827:web:e9f60d685dcde27b'
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 }
+
+}
+
